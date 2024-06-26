@@ -1,6 +1,6 @@
 allow qti_init_shell sysfs_boot_cdsp:file rw_file_perms;
 
-allow qti_init_shell sensors_vendor_data_file:dir search;
+rw_dir_file(qti_init_shell sensors_vendor_data_file)
 allow qti_init_shell sns_file:dir rw_dir_perms;
 allow qti_init_shell sns_file:file { rw_file_perms setattr };
 
