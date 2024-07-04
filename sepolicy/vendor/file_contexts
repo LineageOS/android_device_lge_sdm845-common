@@ -55,6 +55,5 @@
 # Sys files
 /sys/class/qnovo(/.*)?                                                                      u:object_r:sysfs_qnovo:s0
 /sys/kernel/boot_cdsp/boot                                                                  u:object_r:sysfs_boot_cdsp:s0
-/sys/devices/platform/soc/soc:qcom,kgsl-hyp/subsys[0-9]/restart_level                       u:object_r:sysfs_ssr_toggle:s0
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,cam-req-mgr/video4linux/video[0-33]/name(/.*)?  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/input/input[0-9]+/ldaf_thread_pause          u:object_r:sysfs_ldaf:s0
