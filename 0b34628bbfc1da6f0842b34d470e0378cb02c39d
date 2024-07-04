@@ -16,6 +16,23 @@
       "message": "This needs sepolicy updates",
       "revId": "0b34628bbfc1da6f0842b34d470e0378cb02c39d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be7734e5_4095dff2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-07-04T08:12:10Z",
+      "side": 1,
+      "message": "You could do https://review.lineageos.org/q/I32fc08c9ad36b9c8ebfc019fc87a19eece18f0b4 instead",
+      "revId": "0b34628bbfc1da6f0842b34d470e0378cb02c39d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
