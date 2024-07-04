@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a958f48_6d060b78",
+        "filename": "extract-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-07-04T07:17:52Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/q/Icab3f013661304e3a9ec89b0816a8139f6b8e8e5",
+      "revId": "97b620011d9df0402d94df92107aa5bf786ccea4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
