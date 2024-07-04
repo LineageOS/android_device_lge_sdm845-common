@@ -878,6 +878,9 @@ vendor/lib/soundfx/libshoebox.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libshoebox.so
 
+# Subsystem restart
+vendor/bin/ssr_setup
+
 # Thermal
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
