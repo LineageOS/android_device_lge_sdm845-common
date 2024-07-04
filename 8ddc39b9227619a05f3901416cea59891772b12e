@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82a3e3ff_3f452c41",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-07-04T06:19:47Z",
+      "side": 1,
+      "message": "The link on the commit message has nothing to do with this change, besides you can pick the original change.",
+      "revId": "8ddc39b9227619a05f3901416cea59891772b12e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
