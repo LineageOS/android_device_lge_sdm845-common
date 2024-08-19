@@ -34,6 +34,24 @@
       "parentUuid": "70f8c61f_12321ce2",
       "revId": "1e6a7787624994e48be3ed41fd9ac845c9fe2edb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "269a54bd_5dd65e55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-08-19T15:14:51Z",
+      "side": 1,
+      "message": "Ah it got changed later to vendor.audio.use.sw.*.decoder, yeah keep it then",
+      "parentUuid": "109e0be8_9650fe56",
+      "revId": "1e6a7787624994e48be3ed41fd9ac845c9fe2edb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
