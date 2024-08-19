@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70f8c61f_12321ce2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-08-19T15:07:58Z",
+      "side": 1,
+      "message": "fyi, doesn\u0027t exist on AOSP and I don\u0027t see it being used in QTI audio HAL",
+      "revId": "1e6a7787624994e48be3ed41fd9ac845c9fe2edb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
