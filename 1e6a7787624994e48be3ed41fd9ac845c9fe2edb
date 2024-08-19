@@ -16,6 +16,24 @@
       "message": "fyi, doesn\u0027t exist on AOSP and I don\u0027t see it being used in QTI audio HAL",
       "revId": "1e6a7787624994e48be3ed41fd9ac845c9fe2edb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "109e0be8_9650fe56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2024-08-19T15:11:05Z",
+      "side": 1,
+      "message": "Mike told us to keep it https://review.lineageos.org/c/LineageOS/android_device_xiaomi_sdm845-common/+/396951\n(also reflected in axolotl\u0027s version of the patch)\n\nI asked in Discord about it, could use more opinions maybe?",
+      "parentUuid": "70f8c61f_12321ce2",
+      "revId": "1e6a7787624994e48be3ed41fd9ac845c9fe2edb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
