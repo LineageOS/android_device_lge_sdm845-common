@@ -32,6 +32,9 @@ dalvik.vm.dex2oat64.enabled=true
 # Fastbootd
 ro.fastbootd.available=true
 
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
 #Netflix custom property
 ro.netflix.bsp_rev=Q845-05000-1
 
