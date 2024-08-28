@@ -1,18 +1,5 @@
 # Audio
-audio.sys.noisy.broadcast.delay                     u:object_r:vendor_audio_prop:s0
-audio.sys.offload.pstimeout.secs                    u:object_r:vendor_audio_prop:s0
-persist.spkr.cal.duration                           u:object_r:vendor_audio_prop:s0
-persist.vendor.lge.3rd.speaker.prot.enable          u:object_r:vendor_audio_prop:s0
-ro.qc.sdk.audio.                                    u:object_r:vendor_audio_prop:s0
-vendor.lge.wlan.earpiece                            u:object_r:vendor_audio_prop:s0
-
-# Audio - DAC
-persist.vendor.lge.audio.                           u:object_r:vendor_audio_prop:s0
-ro.vendor.lge.config.hifi_enhance_support           u:object_r:vendor_audio_prop:s0
 ro.vendor.lge.feature.use_audio_headset_type_ext    u:object_r:vendor_audio_prop:s0
-vendor.lge.audio.hifi_rec.                          u:object_r:vendor_audio_prop:s0
-vendor.lge.fm_gain_control_headset                  u:object_r:vendor_audio_prop:s0
-vendor.lge.fm_gain_control_speaker                  u:object_r:vendor_audio_prop:s0
 
 # Camera
 persist.vendor.lge.camera.                          u:object_r:camera_prop:s0

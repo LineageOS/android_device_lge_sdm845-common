@@ -35,19 +35,6 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.voice.path.for.pcm.voip=false
 ro.hardware.audio_amplifier=lge
 
-# Audio - DAC
-persist.vendor.lge.audio.handset_rx_type=DEFAULT
-persist.vendor.lge.audio.hifi_adv_support=1
-persist.vendor.lge.audio.nsenabled=ON
-ro.vendor.lge.config.hifi_enhance_support=1
-vendor.lge.audio.hifi_rec.normal_gain=0
-vendor.lge.audio.hifi_rec.normal_lcf=75
-vendor.lge.audio.hifi_rec.normal_lmt=0
-vendor.lge.audio.hifi_rec.concert_gain=-140
-vendor.lge.audio.hifi_rec.concert_lcf=0
-vendor.lge.audio.hifi_rec.concert_lmt=0
-vendor.lge.audio.hifi_rec.offset_gain=39
-
 # Audio - Features
 vendor.audio.feature.a2dp_offload.enable=true
 vendor.audio.feature.afe_proxy.enable=true
