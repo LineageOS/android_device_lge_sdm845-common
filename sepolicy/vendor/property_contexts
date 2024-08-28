@@ -1,5 +1,4 @@
 # Audio
-audio.dolby.ds2.                                    u:object_r:vendor_audio_prop:s0
 audio.sys.noisy.broadcast.delay                     u:object_r:vendor_audio_prop:s0
 audio.sys.offload.pstimeout.secs                    u:object_r:vendor_audio_prop:s0
 persist.spkr.cal.duration                           u:object_r:vendor_audio_prop:s0
