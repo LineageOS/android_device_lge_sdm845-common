@@ -44,16 +44,6 @@ vendor.display.mode                                 u:object_r:vendor_display_pr
 # Media
 media.settings.xml                                  u:object_r:media_settings_prop:s0
 
-# NFC
-nfc.debug_enabled                                   u:object_r:nfc_nq_prop:s0
-persist.vendor.nfc.uicc_enabled                     u:object_r:nfc_nq_prop:s0
-nfc.nxp_log_level_global                            u:object_r:nfc_nq_prop:s0
-nfc.nxp_log_level_extns                             u:object_r:nfc_nq_prop:s0
-nfc.nxp_log_level_hal                               u:object_r:nfc_nq_prop:s0
-nfc.nxp_log_level_nci                               u:object_r:nfc_nq_prop:s0
-nfc.nxp_log_level_dnld                              u:object_r:nfc_nq_prop:s0
-nfc.nxp_log_level_tml                               u:object_r:nfc_nq_prop:s0
-
 # Sensors
 persist.vendor.sensors.enable.mag_filter            u:object_r:vendor_sensors_prop:s0
 
