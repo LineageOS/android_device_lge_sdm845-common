@@ -7,3 +7,7 @@ get_prop(thermal-engine, vendor_lge_misc_prop)
 set_prop(thermal-engine, property_socket)
 get_prop(thermal-engine, thermal-engine_prop);
 set_prop(thermal-engine, thermal-engine_prop);
+
+# Allow thermal engine to read sysfs nodes
+dontaudit thermal-engine sysfs_usb_supply:dir search;
+dontaudit thermal-engine sysfs:file read;
