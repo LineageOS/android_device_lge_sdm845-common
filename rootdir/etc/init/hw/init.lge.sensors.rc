@@ -1,9 +1,3 @@
-# Sensor
-
-# Caymans doesn't support CHRE feature
-on boot
-    setprop vendor.chre.enabled 0
-
 on post-fs-data
     mkdir /mnt/vendor/sns/sensors/ 0755 system system
     mkdir /mnt/vendor/sns/sensors/registry/ 0755 system system
