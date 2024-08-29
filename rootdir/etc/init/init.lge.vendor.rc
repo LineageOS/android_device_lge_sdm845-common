@@ -1,151 +1,4 @@
-on post-fs
-    mkdir /vendor/persist-lg/property 0771 system radio
-    mkdir /mnt/vendor/persist-lg/autosimlock 0770 system system
-    mkdir /vendor/persist-lg/poweron 0775 root root
-    mkdir /vendor/persist-lg/tmo 0771 radio radio
-	
-    # For U+ call forward
-    mkdir /mnt/vendor/persist-lg/callfw 0770 radio radio
-    mkdir /mnt/vendor/persist-lg/keymaster 0770 system system
-    chown root system /mnt/vendor/persist-lg
-    chmod 0771 /mnt/vendor/persist-lg
-    restorecon_recursive /mnt/vendor/persist-lg
-    mkdir /mnt/vendor/persist-lg/data 0700 system system
-    restorecon_recursive /mnt/vendor/persist-lg/data
-    mkdir /mnt/vendor/persist-lg/property 0771 system radio
-
-    # Use Secure Boot
-    verity_update_state
-
-    # QFUSE
-    write /sys/devices/platform/lge-qfprom/sec_read 0
-
-    # Create roaming directory for Sprint roaming setting
-    mkdir /mnt/vendor/persist-lg/roaming 0771 system radio
-
-on post-fs-data
-    # LGP_DATA_APN_BACKUP
-    mkdir /mnt/vendor/persist-lg/lgdata 0771 radio radio
-
-    # Widevine
-    mkdir /mnt/vendor/persist-lg/widevine 0770 drm system
-
-    # Widevine firmware
-    mkdir /mnt/vendor/persist-lg/firmware 0771 system system
-
-    # Charger logo
-    mkdir /mnt/vendor/persist-lg/chargerlogo 0771 system system
-
-    # Thermal Encryption
-    mkdir /mnt/vendor/persist-lg/thermal 0770 root system
-
-    # RCT
-    rm /mnt/vendor/persist-lg/rct
-    rm /mnt/vendor/persist-lg/rct.cfg
-    mkdir /mnt/vendor/persist-lg/rct 0771 root root
-
-    # MM Proxy
-    mkdir /vendor/persist-lg/mmoprt 0771 system system
-
-    # Encryption
-    mkdir /vendor/persist-lg/encryption 0771 system system
-
-    # secureks
-    mkdir /vendor/persist-lg/secureks 0770 system system
-
-    # STB
-    mkdir /vendor/persist-lg/stblvd 0771 system system
-    chmod 770 /vendor/persist-lg/stblvd/dkp
-    chmod 770 /vendor/persist-lg/stblvd/srmp
-
-    # KDDI SIMLock Management
-    mkdir /vendor/persist-lg/cardinal 0770 system system
-
-    # CAPP_BLUEERROR_HANDLER: temp version, it will be removed
-    chown root system /data/dontpanic
-    chmod 0775 /data/dontpanic
-
-    # SP Mirroring
-    chmod 0660 /sys/class/graphics/fb0/sp_link_backlight_off
-    chown system system /sys/class/graphics/fb0/sp_link_backlight_off
-    chmod 0660 /sys/devices/virtual/input/lge_touch/sp_link_touch_off
-    chown system system /sys/devices/virtual/input/lge_touch/sp_link_touch_off
-
-    # LGP_DATA_APN_BACKUP
-    mkdir /mnt/vendor/persist-lg/lgdata 0775 radio radio
-
-    # LGBackup Removing Unlabeled Resource
-    rm /data/data/.bnr_fifo_rly
-    rm /data/data/.bnr_fifo_req
-
-    # Labeling lg partitions
-    restorecon /mnt/vendor/persist-lg
-    restorecon_recursive /mnt/vendor/persist-lg
-    restorecon /mnt/vendor/sns
-    restorecon_recursive /mnt/vendor/sns
-    restorecon /mnt/vendor/mpt
-    restorecon_recursive /mnt/vendor/mpt
-    restorecon /mnt/vendor/persist
-    restorecon_recursive /mnt/vendor/persist
-    restorecon /cust
-    restorecon_recursive /cust
-    restorecon /mnt/vendor/eri
-    restorecon_recursive /mnt/vendor/eri
-    restorecon /mnt/vendor/ve
-    restorecon_recursive /mnt/vendor/ve
-    restorecon /mnt/vendor/OneSeg
-    restorecon_recursive /mnt/vendor/OneSeg
-    restorecon /dev/iwland
-    restorecon /data/preload
-    restorecon_recursive /data/preload
-    restorecon /mnt/vendor/power
-    restorecon_recursive /mnt/vendor/power
-    restorecon /mnt/vendor/absolute
-    restorecon_recursive /mnt/vendor/absolute
-    restorecon /mnt/vendor/qni
-    restorecon_recursive /mnt/vendor/qni
-    restorecon /mnt/vendor/power
-    restorecon_recursive /mnt/vendor/power
-    restorecon /sys/kernel/debug/tzdbg
-    restorecon_recursive /sys/kernel/debug/tzdbg
-
-    # Create callduration file
-    mkdir /mnt/vendor/persist-lg/callduration 0770 system radio
-    chown system /mnt/vendor/persist-lg/callduration
-    chmod 0770 /mnt/vendor/persist-lg/callduration
-
-    # Create rtnlastdate file
-    mkdir /vendor/persist-lg/rtnlastdate 0770 system radio
-
-    # Create camera dir for EEPROM data
-    mkdir mnt/vendor/persist-lg/camera 0771 cameraserver radio
-
-    # Create Touch self test folder
-    mkdir /data/vendor/touch 0771 system system
-
-    # Create factory for key attestation provisoning
-    mkdir /data/vendor/km 0770 system system
-
-    # Create ots data file
-    mkdir /data/vendor/ots 0775 system system
-
 on boot
-    # Assign TCP buffer thresholds to be ceiling value of technology maximums
-    # Increased technology maximums should be reflected here.
-    # LGP_DATA_PERFORMANCE_HELPING_CODE, y01.jeong@lge.com
-    write /proc/sys/net/core/rmem_max  8388608
-    write /proc/sys/net/core/wmem_max  8388608
-
-    # LGP_DATA_PERFORMANCE_HELPING_CODE, y01.jeong@lge.com
-    write /proc/sys/net/core/netdev_max_backlog 5000
-
-    # LGP_DATA_APN_BACKUP
-    mkdir /mnt/vendor/persist-lg/lgdata 0775 radio radio
-
-    # LGP_DATA_IWLAN
-    mkdir /data/misc/setkey 0666 root system
-    restorecon /data/misc/setkey
-
     # Touch driver
     chown system system /sys/devices/virtual/input/lge_touch/incoming_call
     chmod 664 /sys/devices/virtual/input/lge_touch/incoming_call
@@ -291,3 +144,163 @@ on boot
     chmod 664 /sys/class/leds/CG/brightness
     chown system system /sys/class/leds/CB/brightness
     chmod 664 /sys/class/leds/CB/brightness
+
+    # Power
+    chown root system /sys/devices/platform/lge-unified-nodes/thermald_iusb
+    chown root system /sys/devices/platform/lge-unified-nodes/thermald_ibat
+    chown root system /sys/devices/platform/lge-unified-nodes/thermald_idc
+    chown root system /sys/devices/platform/lge-unified-nodes/thermald_vdc
+    chown system system /sys/devices/platform/lge-unified-nodes/charging_restriction
+    chown system system /sys/devices/platform/lge-unified-nodes/charging_enable
+    chown system system /sys/devices/platform/lge-unified-nodes/charging_step
+    chown system system /sys/devices/platform/lge-unified-nodes/charging_completed
+    chown system system /sys/devices/platform/lge-unified-nodes/battery_age
+    chown system system /sys/devices/platform/lge-unified-nodes/battery_condition
+    chown system system /sys/devices/platform/lge-unified-nodes/battery_valid
+    chown system system /sys/devices/platform/lge-unified-nodes/charger_name
+    chown system system /sys/devices/platform/lge-unified-nodes/charger_highspeed
+    chown system system /sys/devices/platform/lge-unified-nodes/charger_incompatible
+    chown system system /sys/devices/platform/lge-unified-nodes/charger_usbid
+    chown system system /sys/devices/platform/lge-unified-nodes/charger_verbose
+    chown system system /sys/devices/platform/lge-unified-nodes/support_fastpl
+    chown system system /sys/devices/platform/lge-unified-nodes/support_fastchg
+
+    chown system system /sys/class/power/fbcn/fbcn_en
+    chmod 664 /sys/class/power/fbcn/fbcn_en
+    chown system system /sys/class/power/fbcn/fbcn_i
+    chmod 664 /sys/class/power/fbcn/fbcn_i
+    chown system system /sys/class/power/fbcn/fbcn_intv
+    chmod 664 /sys/class/power/fbcn/fbcn_intv
+    chown system system /sys/class/panel/img_tune/image_enhance_set
+    chmod 664 /sys/class/panel/img_tune/image_enhance_set
+    chown system system /sys/class/power/vfps/vfps
+    chmod 664 /sys/class/power/vfps/vfps
+    chown system system /sys/class/power/vfps/vfps_fcnt
+    chmod 664 /sys/class/power/vfps/vfps_fcnt
+    chown system system /sys/class/power/vfps/vfps_ratio
+    chmod 664 /sys/class/power/vfps/vfps_ratio
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 664 /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/safety_timer_enabled
+    chmod 664 /sys/class/power_supply/battery/safety_timer_enabled
+    chown system system /sys/class/power_supply/battery/battery_charging_enabled
+    chmod 664 /sys/class/power_supply/battery/battery_charging_enabled
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+    write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 1
+    chown system system /sys/devices/platform/soc/soc:lrmc/bob_mode
+    chmod 664 /sys/devices/platform/soc/soc:lrmc/bob_mode
+
+on post-fs
+    mkdir /vendor/persist-lg/property 0771 system radio
+    mkdir /mnt/vendor/persist-lg/autosimlock 0770 system system
+    mkdir /vendor/persist-lg/poweron 0775 root root
+    mkdir /vendor/persist-lg/tmo 0771 radio radio
+	
+    # For U+ call forward
+    mkdir /mnt/vendor/persist-lg/callfw 0770 radio radio
+    mkdir /mnt/vendor/persist-lg/keymaster 0770 system system
+    chown root system /mnt/vendor/persist-lg
+    chmod 0771 /mnt/vendor/persist-lg
+    restorecon_recursive /mnt/vendor/persist-lg
+    mkdir /mnt/vendor/persist-lg/data 0700 system system
+    restorecon_recursive /mnt/vendor/persist-lg/data
+    mkdir /mnt/vendor/persist-lg/property 0771 system radio
+
+    # QFUSE
+    write /sys/devices/platform/lge-qfprom/sec_read 0
+
+    # Roaming
+    mkdir /mnt/vendor/persist-lg/roaming 0771 system radio
+
+on post-fs-data
+    # Widevine
+    mkdir /mnt/vendor/persist-lg/widevine 0770 drm system
+
+    # Widevine firmware
+    mkdir /mnt/vendor/persist-lg/firmware 0771 system system
+
+    # Thermal Encryption
+    mkdir /mnt/vendor/persist-lg/thermal 0770 root system
+
+    # RCT
+    rm /mnt/vendor/persist-lg/rct
+    rm /mnt/vendor/persist-lg/rct.cfg
+    mkdir /mnt/vendor/persist-lg/rct 0771 root root
+
+    # MM Proxy
+    mkdir /vendor/persist-lg/mmoprt 0771 system system
+
+    # Encryption
+    mkdir /vendor/persist-lg/encryption 0771 system system
+
+    # secureks
+    mkdir /vendor/persist-lg/secureks 0770 system system
+
+    # STB
+    mkdir /vendor/persist-lg/stblvd 0771 system system
+    chmod 770 /vendor/persist-lg/stblvd/dkp
+    chmod 770 /vendor/persist-lg/stblvd/srmp
+
+    # SP Mirroring
+    chmod 0660 /sys/class/graphics/fb0/sp_link_backlight_off
+    chown system system /sys/class/graphics/fb0/sp_link_backlight_off
+    chmod 0660 /sys/devices/virtual/input/lge_touch/sp_link_touch_off
+    chown system system /sys/devices/virtual/input/lge_touch/sp_link_touch_off
+
+    # Labeling lg partitions
+    restorecon /mnt/vendor/persist-lg
+    restorecon_recursive /mnt/vendor/persist-lg
+    restorecon /mnt/vendor/sns
+    restorecon_recursive /mnt/vendor/sns
+    restorecon /mnt/vendor/mpt
+    restorecon_recursive /mnt/vendor/mpt
+    restorecon /mnt/vendor/persist
+    restorecon_recursive /mnt/vendor/persist
+    restorecon /cust
+    restorecon_recursive /cust
+    restorecon /mnt/vendor/eri
+    restorecon_recursive /mnt/vendor/eri
+    restorecon /mnt/vendor/ve
+    restorecon_recursive /mnt/vendor/ve
+    restorecon /mnt/vendor/OneSeg
+    restorecon_recursive /mnt/vendor/OneSeg
+    restorecon /dev/iwland
+    restorecon /data/preload
+    restorecon_recursive /data/preload
+    restorecon /mnt/vendor/power
+    restorecon_recursive /mnt/vendor/power
+    restorecon /mnt/vendor/absolute
+    restorecon_recursive /mnt/vendor/absolute
+    restorecon /mnt/vendor/qni
+    restorecon_recursive /mnt/vendor/qni
+    restorecon /mnt/vendor/power
+    restorecon_recursive /mnt/vendor/power
+    restorecon /sys/kernel/debug/tzdbg
+    restorecon_recursive /sys/kernel/debug/tzdbg
+
+    # Create callduration file
+    mkdir /mnt/vendor/persist-lg/callduration 0770 system radio
+    chown system /mnt/vendor/persist-lg/callduration
+    chmod 0770 /mnt/vendor/persist-lg/callduration
+
+    # Create rtnlastdate file
+    mkdir /vendor/persist-lg/rtnlastdate 0770 system radio
+
+    # Create camera dir for EEPROM data
+    mkdir mnt/vendor/persist-lg/camera 0771 cameraserver radio
+
+    # Create Touch self test folder
+    mkdir /data/vendor/touch 0771 system system
+
+    # Create factory for key attestation provisoning
+    mkdir /data/vendor/km 0770 system system
+
+    # Create ots data file
+    mkdir /data/vendor/ots 0775 system system

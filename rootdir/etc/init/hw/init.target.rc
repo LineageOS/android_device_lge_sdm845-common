@@ -36,18 +36,68 @@ on init
     write /dev/stune/camera-daemon/schedtune.prefer_idle 1
     write /dev/stune/camera-daemon/schedtune.boost 0
 
-#on fs
-#    wait /dev/block/platform/soc/1d84000.ufshc
-#    symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
-#    mount_all /vendor/etc/fstab.qcom
-#    chown root system /mnt/vendor/persist
-#    chmod 0771 /mnt/vendor/persist
-#    restorecon_recursive /mnt/vendor/persist
-#    mkdir /mnt/vendor/persist/data 0700 system system
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    wait /dev/block/bootdevice
+    mount_all /vendor/etc/fstab.${ro.hardware} --early
+
+    chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    restorecon_recursive /mnt/vendor/persist
+    mkdir /mnt/vendor/persist/data 0700 system system
+
+    chown system system /mnt/vendor/absolute
+    chmod 0750 /mnt/vendor/absolute
+    restorecon_recursive /mnt/vendor/absolute
+
+    chown system system /mnt/vendor/mpt
+    chmod 0775 /mnt/vendor/mpt
+    restorecon_recursive /mnt/vendor/mpt
+
+    chown system system /mnt/vendor/persist-lg
+    chmod 0771 /mnt/vendor/persist-lg
+    restorecon_recursive /mnt/vendor/persist-lg
+
+    chown system system /mnt/vendor/sns
+    chmod 0755 /mnt/vendor/sns
+    restorecon_recursive /mnt/vendor/sns
+
+    chown system radio /mnt/vendor/eri
+    chmod 0771 /mnt/vendor/eri
+    restorecon_recursive /mnt/vendor/eri
+
+    chown system system /proc/reclaim_pid
+
+on late-fs
+    mount_all /vendor/etc/fstab.${ro.hardware} --late
 
 on post-fs
-    # set RLIMIT_MEMLOCK to 64MB
-    setrlimit 8 67108864 67108864
+    chown system system /vendor/mpt
+    chmod 0775 /vendor/mpt
+
+    chown system system /vendor/persist-lg
+    chmod 0771 /vendor/persist-lg
+
+    chown system system /mnt/vendor/sns
+    chmod 0755 /mnt/vendor/sns
+
+    chown system system /vendor/fota
+    chmod 0755 /vendor/fota
+
+    chown root system /sys/module/lge_handle_panic/parameters/gen_adsp_panic
+    chown root system /sys/module/lge_handle_panic/parameters/gen_bug
+    chown root system /sys/module/lge_handle_panic/parameters/gen_cdsp_panic
+    chown root system /sys/module/lge_handle_panic/parameters/gen_modem_panic
+    chown root system /sys/module/lge_handle_panic/parameters/gen_panic
+    chown root system /sys/module/lge_handle_panic/parameters/gen_slpi_panic
+    chown root system /sys/module/lge_handle_panic/parameters/gen_venus_panic
+    chown root system /sys/module/lge_handle_panic/parameters/gen_wdt_bark
+    chown root system /sys/module/lge_handle_panic/parameters/gen_wdt_bite
+
+    # change permissions on ioninfo
+    chown root log /proc/ioninfo
+    chmod 0440 /proc/ioninfo
 
     write /dev/ipa 1
 
@@ -65,7 +115,7 @@ on boot
     start rmt_storage
     start rfs_access
 
-#USB controller configuration
+# USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
