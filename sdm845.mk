@@ -198,9 +198,9 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-ifneq ($(filter judypn judyln g710n g710ulm,$(shell echo $(TARGET_PRODUCT) | sed 's/^lineage_//')),)
+ifneq ($(filter caymanslm judypn judyln g710n g710ulm,$(shell echo $(TARGET_PRODUCT) | sed 's/^lineage_//')),)
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.lge
+    android.hardware.biometrics.fingerprint@2.3-service.lge
 endif
 
 # FM packages
