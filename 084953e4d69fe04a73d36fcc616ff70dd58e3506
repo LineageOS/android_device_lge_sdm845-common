@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53e390c9_ca86aba7",
+        "filename": "extract-files.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-09-03T20:15:19Z",
+      "side": 1,
+      "message": "Unless your devices use google CarrierSettings pb, you shouldn\u0027t add this part, CARRIER_SKIP_FILES above and the setup-makefiles changes",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 10
+      },
+      "revId": "084953e4d69fe04a73d36fcc616ff70dd58e3506",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
