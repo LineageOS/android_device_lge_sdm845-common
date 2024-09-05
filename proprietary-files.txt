@@ -182,7 +182,6 @@ vendor/lib/librmp.so
 vendor/lib/libunified_sysfs_vendor.so
 vendor/lib/vendor.lge.hardware.filehandle@1.0.so
 vendor/lib64/libcpion.so
-vendor/lib64/libfpfactory-impl.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/liblgftmitem_vendor.so
 vendor/lib64/librmp.so
@@ -201,12 +200,6 @@ system_ext/etc/permissions/com.qti.dpmframework.xml
 system_ext/etc/permissions/dpmapi.xml
 system_ext/framework/com.qti.dpmframework.jar
 system_ext/framework/dpmapi.jar
-system_ext/lib/com.qualcomm.qti.dpm.api@1.0.so
-system_ext/lib/libdpmctmgr.so
-system_ext/lib/libdpmfdmgr.so
-system_ext/lib/libdpmframework.so
-system_ext/lib/libdpmtcm.so
-system_ext/lib/vendor.qti.diaghal@1.0.so
 system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
 system_ext/lib64/libdpmctmgr.so
 system_ext/lib64/libdpmfdmgr.so
@@ -547,12 +540,6 @@ vendor/lib/libperipheral_client.so
 vendor/lib/libspcom.so
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
-
-# QDUtils
-system_ext/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # QMI
 vendor/bin/irsc_util
