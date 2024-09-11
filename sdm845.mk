@@ -198,7 +198,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-ifneq ($(filter caymanslm judypn judyln g710n g710ulm,$(shell echo $(TARGET_PRODUCT) | sed 's/^lineage_//')),)
+ifneq ($(filter caymanslm judypn judyln,$(DEVICE_NAME),))
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.lge
 endif
@@ -332,7 +332,7 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpese@1.0.vendor:64 \
     vendor.nxp.nxpnfc@1.0.vendor:64
 
-ifneq ($(filter judypn judyln g710n g710ulm judyp,$(shell echo $(TARGET_PRODUCT) | sed 's/^lineage_//')),)
+ifneq ($(filter judypn judyln judyp,$(DEVICE_NAME),))
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/nfc/pn547/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(COMMON_PATH)/configs/nfc/pn547/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
