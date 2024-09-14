@@ -484,7 +484,8 @@ vendor/lib64/libmulawdec.so
 
 # Media
 vendor/etc/system_properties.xml
-vendor/lib64/libmmosal.so
+vendor/lib/libmmosal_vendor.so
+vendor/lib64/libmmosal_vendor.so
 
 # IRQ balance
 vendor/bin/msm_irqbalance
