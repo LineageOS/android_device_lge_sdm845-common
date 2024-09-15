@@ -35,8 +35,9 @@ write_footers
 if [ -s "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device specified common
     source "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/setup-makefiles.sh"
-    DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
-    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+    LOCAL_DEVICE="${DEVICE}"
+    DEVICE="${DEVICE_SPECIFIED_COMMON}"
+    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" false
 
     # Warning headers and guards
     write_headers "${DEVICE_SPECIFIED_COMMON_DEVICE}"
@@ -47,7 +48,7 @@ if [ -s "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_
     # Finish
     write_footers
 
-    DEVICE_COMMON="sdm845-common"
+    DEVICE="${LOCAL_DEVICE}"
 fi
 
 if [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
