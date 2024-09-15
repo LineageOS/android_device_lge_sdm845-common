@@ -98,9 +98,9 @@ fi
 if [ -z "${ONLY_COMMON}" ] && [ -z "${ONLY_TARGET}" ] && [ -s "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device specified common
     source "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/extract-files.sh"
-    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR_SPECIFIED_COMMON:-$VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
-    extract "${MY_DIR}/../../${VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+    extract "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
 
 if [ -z "${ONLY_COMMON}" ] && [ -z "${ONLY_DEVICE_COMMON}" ] && [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
