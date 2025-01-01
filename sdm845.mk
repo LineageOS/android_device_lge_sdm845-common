@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
     gralloc.sdm845 \
-    hwcomposer.sdm845 \
+    hwcomposer.qcom \
     vendor.qti.hardware.display.allocator@1.0-service \
     vendor.qti.hardware.display.config-V5-ndk \
     vendor.qti.hardware.display.mapper@3.0.vendor \

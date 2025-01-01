@@ -126,6 +126,7 @@ vendor.display.enable_default_color_mode=1
 vendor.display.disable_rotator_downscale=1
 persist.sys.sf.native_mode=0
 ro.hardware.egl=adreno
+ro.hardware.hwcomposer=qcom
 ro.hardware.vulkan=adreno
 
 # DPM
