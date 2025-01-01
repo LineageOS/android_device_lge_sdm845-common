@@ -82,10 +82,6 @@ BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 BOARD_VENDOR := lge
 
 # Display
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_HWC2 := true
-TARGET_USES_ION := true
-TARGET_USES_DRM_PP := true
 TARGET_SCREEN_DENSITY := 560
 
 # Filesystem
@@ -133,6 +129,9 @@ TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/
 # Malloc
 MALLOC_SVELTE := true
 MALLOC_SVELTE_FOR_LIBC32 := true
+
+# Media
+TARGET_USES_ION := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
