@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63f17e79_6e895001",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2025-01-09T07:21:54Z",
+      "side": 1,
+      "message": "Synced chain https://review.lineageos.org/c/LineageOS/android_hardware_qcom_display/+/413592\n\nSystem fails to load surfaceflinger",
+      "revId": "0e1c2bcb4569eebe9fc6322b5f9a0a59ee88bcb8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
