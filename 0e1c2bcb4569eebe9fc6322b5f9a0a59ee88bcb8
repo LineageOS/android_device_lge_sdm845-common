@@ -16,6 +16,23 @@
       "message": "Synced chain https://review.lineageos.org/c/LineageOS/android_hardware_qcom_display/+/413592\n\nSystem fails to load surfaceflinger",
       "revId": "0e1c2bcb4569eebe9fc6322b5f9a0a59ee88bcb8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c38fdcce_04315f75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2025-01-09T07:35:24Z",
+      "side": 1,
+      "message": "seems like HWC doesn\u0027t start at all\n`01-08 19:13:07.368  2282  2282 I android.hardware.graphics.composer@2.3-service: falling back to gralloc module`",
+      "revId": "0e1c2bcb4569eebe9fc6322b5f9a0a59ee88bcb8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
