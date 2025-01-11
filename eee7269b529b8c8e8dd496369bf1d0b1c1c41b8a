@@ -33,6 +33,24 @@
       "message": "why do you need this?",
       "revId": "eee7269b529b8c8e8dd496369bf1d0b1c1c41b8a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afd1d358_e24fab17",
+        "filename": "vendor.prop",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2025-01-11T17:36:14Z",
+      "side": 1,
+      "message": "On LG devices, androidboot.hardware is the device codename, not qcom. So without it, hwc doesn\u0027t even try to load the qcom one and looks for hwc.default.so instead.",
+      "parentUuid": "1773e937_0d6ce4be",
+      "revId": "eee7269b529b8c8e8dd496369bf1d0b1c1c41b8a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
