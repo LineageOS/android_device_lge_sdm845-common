@@ -71,13 +71,6 @@ void init_target_properties() {
     std::string model;
     std::string product_name;
     std::string cmdline;
-    std::string cust_prop_name = "cust.prop";
-    std::string default_cust_prop_path = "/oem/OP/" + cust_prop_name;
-    std::string cust_prop_path;
-    std::string cust_prop_line;
-    DIR *dir;
-    struct dirent *ent;
-    struct stat statBuf;
     bool unknownModel = true;
     bool dualSim = false;
 
@@ -93,38 +86,6 @@ void init_target_properties() {
             } else if(pieces[0].compare("androidboot.vendor.lge.sim_num") == 0 && pieces[1].compare("2") == 0)
             {
                 dualSim = true;
-            }
-        }
-    }
-
-    cust_prop_path = default_cust_prop_path;
-
-    if((dir = opendir("/oem/OP/")) != NULL) {
-        while ((ent = readdir(dir)) != NULL) {
-            if(ent->d_type == DT_DIR) {
-                std::string tmp = "/oem/OP/";
-                tmp.append(ent->d_name);
-                tmp.append("/");
-                tmp.append(cust_prop_name);
-                if(stat(tmp.c_str(), &statBuf) == 0)
-                    cust_prop_path = tmp;
-            }
-        }
-        closedir (dir);
-    }
-    std::ifstream cust_prop_stream(cust_prop_path, std::ifstream::in);
-
-    while(std::getline(cust_prop_stream, cust_prop_line)) {
-        std::vector<std::string> pieces = android::base::Split(cust_prop_line, "=");
-        if (pieces.size() == 2) {
-            if(pieces[0].compare("ro.vendor.lge.build.target_region") == 0 ||
-               pieces[0].compare("ro.vendor.lge.build.target_operator") == 0 ||
-               pieces[0].compare("ro.vendor.lge.build.target_country") == 0 ||
-               pieces[0].compare("ro.vendor.lge.capp_cupss.rootdir") == 0 ||
-               pieces[0].compare("telephony.lteOnCdmaDevice") == 0 ||
-               pieces[0].compare("persist.vendor.lge.audio.voice.clarity") == 0)
-            {
-                property_override(pieces[0], pieces[1]);
             }
         }
     }
