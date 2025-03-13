@@ -402,8 +402,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.dual_role_usb
 
 # Vibrator
+ifeq ($(findstring style3lm,$(DEVICE_NAME)),)
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.lge
+endif
 
 # Vintf
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
