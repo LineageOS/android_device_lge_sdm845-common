@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5274c956_14e3c6c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2025-03-14T17:11:43Z",
+      "side": 1,
+      "message": "This seems to break build\n```\ngetDeviceHalManifest: -22 VINTF parse error: Illformed file: /vendor/etc/vintf/manifest.xml: Duplicated manifest.hal entry android.hardware.audio: Conflicting FqInstance: @6.0::IDevicesFactory/default (from /vendor/etc/vintf/manifest.xml) vs. @6.0::IDevicesFactory/default (from /vendor/etc/vintf/manifest.xml). Check whether or not multiple modules providing the same HAL are installed.\n```",
+      "revId": "35eb2f68d944d0e9dd24cf9ed6af1fe5964a7877",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
