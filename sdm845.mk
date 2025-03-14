@@ -133,9 +133,11 @@ PRODUCT_PACKAGES += \
     disable_configstore
 
 # DAC
+ifeq ($(filter caymanslm style3lm,$(DEVICE_NAME)),)
 PRODUCT_PACKAGES += \
     QuadDACPanel \
     vendor.lge.hardware.audio.dac.control@2.0-service
+endif
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
