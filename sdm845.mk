@@ -198,12 +198,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/product_privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Init
+ifneq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
 PRODUCT_COPY_FILES += \
 <<<<<<< HEAD
+<<<<<<< HEAD
     $(COMMON_PATH)/rootdir/etc/fstab.hardware:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(DEVICE_NAME)
+=======
+    $(COMMON_PATH)/rootdir/etc/fstab.judy:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(DEVICE_NAME) \
+    $(COMMON_PATH)/rootdir/etc/fstab.judy:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(DEVICE_NAME)
+else
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/etc/fstab.dynamic:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(DEVICE_NAME) \
+    $(COMMON_PATH)/rootdir/etc/fstab.dynamic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(DEVICE_NAME)
+endif
+>>>>>>> 6ba1e641 (sdm845-common: add support for dynamic partition devices)
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/etc/fstab.hardware:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(DEVICE_NAME) \
     $(COMMON_PATH)/rootdir/etc/init.hardware.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(DEVICE_NAME).rc \
     $(COMMON_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 =======
