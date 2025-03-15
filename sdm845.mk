@@ -34,6 +34,11 @@ TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
+ifeq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
+endif
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
@@ -206,11 +211,17 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/product_privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 # Init
+ifneq ($(PRODUCT_USE_DYNAMIC_PARTITIONS),true)
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/etc/fstab.hardware:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(DEVICE_NAME)
+    $(COMMON_PATH)/rootdir/etc/fstab.judy:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(DEVICE_NAME) \
+    $(COMMON_PATH)/rootdir/etc/fstab.judy:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(DEVICE_NAME)
+else
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/etc/fstab.dynamic:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(DEVICE_NAME) \
+    $(COMMON_PATH)/rootdir/etc/fstab.dynamic:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(DEVICE_NAME)
+endif
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/etc/fstab.hardware:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(DEVICE_NAME) \
     $(COMMON_PATH)/rootdir/etc/init.hardware.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(DEVICE_NAME).rc \
     $(COMMON_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
