@@ -346,10 +346,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# Protobuf
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-lite-vendorcompat
-
 # QMI
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/qmi_fw.conf:$(TARGET_COPY_OUT_VENDOR)/etc/qmi_fw.conf
