@@ -276,6 +276,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
+ifeq ($(findstring style3lm,$(DEVICE_NAME)),)
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
@@ -285,6 +286,7 @@ PRODUCT_PACKAGES += \
     Tag \
     vendor.nxp.nxpese@1.0.vendor:64 \
     vendor.nxp.nxpnfc@1.0.vendor:64
+endif
 
 ifneq ($(filter judypn judyln judyp,$(DEVICE_NAME)),)
 PRODUCT_COPY_FILES += \
