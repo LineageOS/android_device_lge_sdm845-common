@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6df9c991_7072a4c0",
+        "filename": "sdm845.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-03-16T20:34:23Z",
+      "side": 1,
+      "message": "this surely breaks build :P",
+      "revId": "453c985ae78b7086885d5d5f23e73afdb4056a91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
