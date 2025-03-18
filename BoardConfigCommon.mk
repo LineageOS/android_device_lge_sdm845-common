@@ -106,9 +106,6 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix_legacy.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
-# Init
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lge_sdm845
-
 # Kernel
 BOARD_KERNEL_CMDLINE := msm_rtb.filter=0x237 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
