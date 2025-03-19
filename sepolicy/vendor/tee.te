@@ -1,5 +1,5 @@
 allow tee persist_lg_fingerprint_file:dir rw_dir_perms;
-allow tee persist_lg_fingerprint_file:file { rw_file_perms create unlink };
+allow tee persist_lg_fingerprint_file:file { create_file_perms unlink };
 
 allow tee persist_lg_data_file:dir rw_dir_perms;
 allow tee persist_lg_data_file:file { rw_file_perms create unlink };

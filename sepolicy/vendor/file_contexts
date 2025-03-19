@@ -9,6 +9,7 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/vendor                    u:object_r:system_block_device:s0
 
 # Devices
+/dev/esfp0                u:object_r:fingerprintd_device:s0
 /dev/goodix_fp            u:object_r:fingerprintd_device:s0
 /dev/pn547                u:object_r:nfc_device:s0
 
@@ -41,6 +42,7 @@
 /mnt/vendor/persist-lg(/.*)?                            u:object_r:persist_lg_data_file:s0
 /mnt/vendor/persist-lg/camera(/.*)?                     u:object_r:persist_lg_camera_file:s0
 /mnt/vendor/persist-lg/data(/.*)?                       u:object_r:qseesfs_data_file:s0
+/mnt/vendor/persist-lg/egis(/.*)?                       u:object_r:persist_lg_fingerprint_file:s0
 /mnt/vendor/persist-lg/firmware(/.*)?                   u:object_r:firmware_data_file:s0
 /mnt/vendor/persist-lg/goodix(/.*)?                     u:object_r:persist_lg_fingerprint_file:s0
 /mnt/vendor/persist-lg/widevine(/.*)?                   u:object_r:widevine_data_file:s0
