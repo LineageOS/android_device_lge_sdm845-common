@@ -1,2 +1,3 @@
 type hal_lgdata_hwservice, hwservice_manager_type;
+type hal_powerhint_hwservice, hwservice_manager_type;
 type hal_vss_ims_hwservice, hwservice_manager_type;

@@ -1,6 +1,9 @@
 attribute hal_lgdata;
 attribute hal_lgdata_client;
 attribute hal_lgdata_server;
+attribute hal_powerhint;
+attribute hal_powerhint_client;
+attribute hal_powerhint_server;
 attribute hal_vss_ims;
 attribute hal_vss_ims_client;
 attribute hal_vss_ims_server;
