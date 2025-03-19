@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a8d6fb9_6bd97434",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2025-03-19T13:30:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffd3d7a9_37ac8fc4",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "99720cb6f7c74513bb53404389ccaa7e50ad2891",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cda70bfd_c7a137f2",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-03-19T10:02:27Z",
       "side": 1,
       "message": "whitespace?",
+      "range": {
+        "startLine": 18,
+        "startChar": 95,
+        "endLine": 18,
+        "endChar": 97
+      },
+      "revId": "99720cb6f7c74513bb53404389ccaa7e50ad2891",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84851cee_7d6f07cc",
+        "filename": "rootdir/etc/fstab.dynamic",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 31496
+      },
+      "writtenOn": "2025-03-19T13:30:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cda70bfd_c7a137f2",
       "range": {
         "startLine": 18,
         "startChar": 95,
