@@ -279,7 +279,6 @@ endif
 
 # OMX
 PRODUCT_PACKAGES += \
-    libOmxCore \
     libOmxVdec \
     libOmxVenc \
     libc2dcolorconvert \

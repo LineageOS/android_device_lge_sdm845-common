@@ -1,9 +1,6 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
 ## are from G910EMW30l (SKQ1.211103.001).
 
-# Current blobs with ELF checks disabled:
-# libOmxVideoDSMode, libOmxVpp depends on libOmxCore, which is a GNU Makefile target
-
 # ADSP
 vendor/bin/adsprpcd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
@@ -486,8 +483,8 @@ vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # OMX
-vendor/lib/libOmxVideoDSMode.so;DISABLE_CHECKELF
-vendor/lib/libOmxVpp.so;DISABLE_CHECKELF
+vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libOmxVpp.so
 
 # Pasrmanager
 vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
