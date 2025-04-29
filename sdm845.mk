@@ -217,6 +217,8 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/*.rc),\
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
 
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_lge_sdm845)
+
 # IPA
 PRODUCT_PACKAGES += \
     ipacm \
