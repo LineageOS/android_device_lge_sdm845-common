@@ -123,9 +123,6 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/lge/sdm845
 
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/power_supply/battery/battery_charging_enabled
-
 # Malloc
 MALLOC_SVELTE := true
 MALLOC_SVELTE_FOR_LIBC32 := true
