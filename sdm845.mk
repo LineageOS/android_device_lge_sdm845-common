@@ -84,7 +84,7 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix
 
-ifeq ($(filter judypn,$(DEVICE_NAME)),)
+ifeq ($(filter caymanslm judypn,$(DEVICE_NAME)),)
 PRODUCT_PACKAGES += \
     audio_amplifier.lge
 endif
