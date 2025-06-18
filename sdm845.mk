@@ -165,12 +165,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Fingerprint
-ifeq ($(filter judyp caymanslm,$(DEVICE_NAME)),)
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.lineage
-endif
-
 # FM packages
 PRODUCT_PACKAGES += \
     FM2 \
