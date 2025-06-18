@@ -84,11 +84,6 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix
 
-ifeq ($(filter caymanslm judypn,$(DEVICE_NAME)),)
-PRODUCT_PACKAGES += \
-    audio_amplifier.lge
-endif
-
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
     sound_trigger.primary.sdm845
@@ -396,12 +391,6 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.dual_role_usb
-
-# Vibrator
-ifeq ($(findstring style3lm,$(DEVICE_NAME)),)
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.lge
-endif
 
 # Vintf
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
