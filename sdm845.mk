@@ -273,8 +273,8 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     Tag
 
-ifeq ($(findstring style3lm,$(DEVICE_NAME)),)
 # NFC - NXP
+ifeq ($(TARGET_LGE_HAS_NXP_NFC),true)
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
     vendor.nxp.nxpese@1.0.vendor:64 \
