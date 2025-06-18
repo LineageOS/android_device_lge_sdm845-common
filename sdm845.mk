@@ -273,18 +273,12 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     Tag
 
-ifeq ($(findstring style3lm,$(DEVICE_NAME)),)
 # NFC - NXP
+ifeq ($(TARGET_LGE_HAS_NXP_NFC),true)
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
     vendor.nxp.nxpese@1.0.vendor:64 \
     vendor.nxp.nxpnfc@1.0.vendor:64
-endif
-
-ifneq ($(filter judypn judyln judyp,$(DEVICE_NAME)),)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/pn547/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/configs/nfc/pn547/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 endif
 
 # OMX
