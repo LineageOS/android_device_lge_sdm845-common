@@ -281,12 +281,6 @@ PRODUCT_PACKAGES += \
     vendor.nxp.nxpnfc@1.0.vendor:64
 endif
 
-ifneq ($(filter judypn judyln judyp,$(DEVICE_NAME)),)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/pn547/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(LOCAL_PATH)/configs/nfc/pn547/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
-endif
-
 # OMX
 PRODUCT_PACKAGES += \
     libOmxVdec \
