@@ -8,6 +8,7 @@ genfscon proc /bus/input/devices                                                
 
 # Extcon
 genfscon sysfs /devices/platform/soc/171c0000.slim/tavil-slim-pgd/tavil_codec/extcon/extcon4 u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc/a88000.i2c/i2c-0/0-0034/extcon/extcon5                  u:object_r:sysfs_extcon:s0
 
 # kgsl
 genfscon sysfs /class/kgsl                                                      u:object_r:sysfs_kgsl:s0
