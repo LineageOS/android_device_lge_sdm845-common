@@ -135,7 +135,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/lge/sepolicy/SEPolicy.mk
-PRODUCT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 

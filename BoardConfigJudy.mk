@@ -6,6 +6,8 @@
 
 COMMON_PATH := device/lge/sdm845-common
 
+BOARD_LGE_USES_PERSDATA_AS_METADATA := true
+
 # Inherit from common device tree
 include device/lge/sdm845-common/BoardConfigCommon.mk
 
