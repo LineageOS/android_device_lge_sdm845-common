@@ -1,9 +1,0 @@
-allow hal_drm_widevine widevine_data_file:dir { r_dir_perms search };
-allow hal_drm_widevine widevine_data_file:file r_file_perms;
-
-allow hal_drm_widevine firmware_data_file:dir { rw_dir_perms search };
-allow hal_drm_widevine firmware_data_file:file { rw_file_perms setattr };
-
-allow hal_drm_widevine persist_lg_data_file:dir r_dir_perms;
-
-allow hal_drm_widevine mnt_vendor_file:dir r_dir_perms;
