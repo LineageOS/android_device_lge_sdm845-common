@@ -3,9 +3,6 @@ allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_default hal_fingerprint_default:netlink_socket { read write bind create };
 allow hal_fingerprint_default hal_fingerprint_default:netlink_kobject_uevent_socket { read bind setopt create };
 allow hal_fingerprint_default hal_lge_powerhint_hwservice:hwservice_manager find;
-allow hal_fingerprint_default sysfs_graphics:file w_file_perms;
 
 binder_call(hal_fingerprint_default, hal_fingerprint_default);
 binder_call(hal_fingerprint_default, hal_powerhint_default);
-
-r_dir_file(hal_fingerprint_default, sysfs_graphics);
