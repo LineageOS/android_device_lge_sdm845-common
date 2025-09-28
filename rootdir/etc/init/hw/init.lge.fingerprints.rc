@@ -1,7 +1,9 @@
-# EGIS fingerprint calibration data
+# Fingerprint calibration data
 on post-fs-data
    mkdir /mnt/vendor/persist-lg/egis 0700 system system
+   restorecon_recursive /mnt/vendor/persist-lg/egis
    mkdir /mnt/vendor/persist-lg/goodix 0700 system system
+   restorecon_recursive /mnt/vendor/persist-lg/goodix
    mkdir /data/vendor/fingerprintdump 0775 system system
 
 on boot
